@@ -1,0 +1,6 @@
+# Duo integration config
+client_id = ""
+client_secret = ""
+api_hostname = ""
+redirect_uri = "http://localhost:8080/duo-callback"
+failmode = "closed"
