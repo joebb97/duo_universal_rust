@@ -13,6 +13,7 @@ struct IntegrationConfig<'a> {
     client_secret: &'a str,
     api_hostname: &'a str,
     redirect_uri: &'a str,
+    duo_certs: Option<&'a str>,
     failmode: &'a str,
 }
 
@@ -64,6 +65,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         client_secret: duo_config.client_secret,
         api_hostname: duo_config.api_hostname,
         redirect_uri: duo_config.redirect_uri,
+        duo_certs: duo_config.duo_certs,
     };
     let duo_client = ClientBuilder::new(duo_config)?.build();
     println!("{} {:?}", duo_client.do_stuff(), duo_client);

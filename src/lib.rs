@@ -7,6 +7,7 @@ pub struct DuoConfig<'a> {
     pub client_secret: &'a str,
     pub api_hostname: &'a str,
     pub redirect_uri: &'a str,
+    pub duo_certs: Option<&'a str>
 }
 
 pub struct ClientBuilder<'a> {
