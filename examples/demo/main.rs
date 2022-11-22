@@ -5,7 +5,6 @@ use rocket::fs::FileServer;
 use rocket::{get, post, routes, FromForm};
 use rocket_dyn_templates::{context, Template};
 use serde::Deserialize;
-use std::fs;
 
 #[derive(Deserialize)]
 struct IntegrationConfig<'a> {
@@ -17,11 +16,14 @@ struct IntegrationConfig<'a> {
     failmode: &'a str,
 }
 
-struct Session {
-    duo_state: String,
-    duo_username: String,
-    failmode: String,
+struct DuoState<'a>(&'a str);
+
+struct Session<'a> {
+    duo_state: DuoState<'a>,
+    duo_username: &'a str,
+    failmode: &'a str
 }
+
 
 #[get("/")]
 fn login_get() -> Template {
