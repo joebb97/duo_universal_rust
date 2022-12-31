@@ -9,6 +9,12 @@ edition = "2021"
 reqwest = { version = "0" , features = ["json"]}
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
+erased-serde = "0"
+rand = "0"
+jwt = "0"
+sha2 = "0"
+hmac = "0"
+url = "1"
 
 [dev-dependencies]
 toml = "0"

@@ -1,14 +1,15 @@
 use std::time::Duration;
 
-pub const DEFAULT_STATE_LENGTH: u8 = 36;
-pub const MINIMUM_STATE_LENGTH: u8 = 22;
+pub const DEFAULT_STATE_LENGTH: u16 = 36;
+pub const MINIMUM_STATE_LENGTH: u16 = 22;
 pub const MAXIMUM_STATE_LENGTH: u16 = 1024;
 pub const DEFAULT_JTI_LENGTH: u8 = 36;
 pub const CLIENT_ID_LENGTH: u8 = 20;
 pub const CLIENT_SECRET_LENGTH: u8 = 40;
 pub const EXPIRATION_TIME: u16 = 300;
 pub const ALLOWED_SKEW: Duration = Duration::from_secs(60);
-pub const HEALTH_CHECK_ENDPOINTH: &str = "https://{}/oauth/v1/health_check";
+// The hostname of these endpoints will be set at run-time based on the client_api host
+pub const HEALTH_CHECK_ENDPOINT: &str = "https://{}/oauth/v1/health_check";
 pub const OAUTH_V1_AUTHORIZE_ENDPOINT: &str = "https://{}/oauth/v1/authorize";
 pub const API_HOST_URI_FORMAT: &str = "https://{}";
 pub const TOKEN_ENDPOINT: &str = "https://{}/oauth/v1/token";
